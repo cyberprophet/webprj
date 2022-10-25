@@ -4,11 +4,11 @@ import org.springframework.web.servlet.mvc.Controller;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class IndexController implements Controller {
-    
+public class IndexController implements Controller
+{
     @Override
-    public ModelAndView handleRequest(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
-        
+    public ModelAndView handleRequest(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse)
+    {
         System.out.println("IndexController");
         ModelAndView mv = new ModelAndView("index");
         mv.addObject("data", "Spring MVC~");

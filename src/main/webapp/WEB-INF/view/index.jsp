@@ -108,7 +108,7 @@
 
 
         <ul class="banner-button-list"
-            style="color:#ffff00; font-size:20px;position:absolute; left:10px; bottom:5px; z-index: 100px; display: flex; flex-direction: row;">
+            style="color:#ffff00; font-size:20px;position:absolute; left:10px; bottom:5px; z-index: 100; display: flex; flex-direction: row;">
             <li></li>
         </ul>
 
