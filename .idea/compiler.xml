@@ -9,8 +9,11 @@
         <module name="webprj" />
       </profile>
     </annotationProcessing>
+<<<<<<< HEAD
     <bytecodeTargetLevel>
       <module name="webprj" target="1.8" />
     </bytecodeTargetLevel>
+=======
+>>>>>>> origin/master
   </component>
 </project>
