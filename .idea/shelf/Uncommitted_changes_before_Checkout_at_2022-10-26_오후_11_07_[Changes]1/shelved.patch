@@ -1,0 +1,534 @@
+Index: src/main/webapp/WEB-INF/view/inc/footer.jsp
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/webapp/WEB-INF/view/inc/footer.jsp b/src/main/webapp/WEB-INF/view/inc/footer.jsp
+new file mode 100644
+--- /dev/null	
++++ b/src/main/webapp/WEB-INF/view/inc/footer.jsp	
+@@ -0,0 +1,34 @@
++<%@ page contentType="text/html;charset=UTF-8"
++         language="java"
++         pageEncoding="UTF-8" %>
++<footer id="footer">
++    <div class="content-container">
++        <h2 id="footer-logo"><img src="images/logo-footer.png" alt="회사정보"></h2>
++
++        <div id="company-info">
++            <dl>
++                <dt>주소:</dt>
++                <dd>서울특별시</dd>
++                <dt>관리자메일:</dt>
++                <dd>admin@newlecture.com</dd>
++            </dl>
++            <dl>
++                <dt>사업자 등록번호:</dt>
++                <dd>111-11-11111</dd>
++                <dt>통신 판매업:</dt>
++                <dd>신고제 1111 호</dd>
++            </dl>
++            <dl>
++                <dt>상호:</dt>
++                <dd>뉴렉처</dd>
++                <dt>대표:</dt>
++                <dd>홍길동</dd>
++                <dt>전화번호:</dt>
++                <dd>111-1111-1111</dd>
++            </dl>
++            <div id="copyright" class="margin-top">Copyright ⓒ newlecture.com 2012-2014 All Right Reserved.
++                Contact admin@newlecture.com for more information
++            </div>
++        </div>
++    </div>
++</footer>
+\ No newline at end of file
+Index: .idea/encodings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/encodings.xml b/.idea/encodings.xml
+new file mode 100644
+--- /dev/null	
++++ b/.idea/encodings.xml	
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8">
++    <file url="PROJECT" charset="UTF-8" />
++  </component>
++</project>
+\ No newline at end of file
+Index: src/main/webapp/WEB-INF/view/inc/header.jsp
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/webapp/WEB-INF/view/inc/header.jsp b/src/main/webapp/WEB-INF/view/inc/header.jsp
+new file mode 100644
+--- /dev/null	
++++ b/src/main/webapp/WEB-INF/view/inc/header.jsp	
+@@ -0,0 +1,62 @@
++<%@ page contentType="text/html;charset=UTF-8"
++         language="java"
++         pageEncoding="UTF-8" %>
++
++<header id="header">
++
++    <div class="content-container">
++
++        <h1 id="logo">
++            <a href="/index.html">
++                <img src="/images/logo.png" alt="뉴렉처 온라인"/>
++            </a>
++        </h1>
++
++        <section>
++            <h1 class="hidden">헤더</h1>
++
++            <nav id="main-menu">
++                <h1>메인메뉴</h1>
++                <ul>
++                    <li><a href="/guide">학습가이드</a></li>
++
++                    <li><a href="/course">강좌선택</a></li>
++                    <li><a href="/answeris/index">AnswerIs</a></li>
++                </ul>
++            </nav>
++
++            <div class="sub-menu">
++
++                <section id="search-form">
++                    <h1>강좌검색 폼</h1>
++                    <form action="/course">
++                        <fieldset>
++                            <legend>과정검색필드</legend>
++                            <label>과정검색</label>
++                            <input type="text" name="q" value=""/>
++                            <input type="submit" value="검색"/>
++                        </fieldset>
++                    </form>
++                </section>
++
++                <nav id="acount-menu">
++                    <h1 class="hidden">회원메뉴</h1>
++                    <ul>
++                        <li><a href="/index.html">HOME</a></li>
++                        <li><a href="/member/login.html">로그인</a></li>
++                        <li><a href="/member/agree.html">회원가입</a></li>
++                    </ul>
++                </nav>
++
++                <nav id="member-menu" class="linear-layout">
++                    <h1 class="hidden">고객메뉴</h1>
++                    <ul class="linear-layout">
++                        <li><a href="/member/home"><img src="/images/txt-mypage.png" alt="마이페이지"/></a></li>
++                        <li><a href="/notice/list"><img src="/images/txt-customer.png" alt="고객센터"/></a></li>
++                    </ul>
++                </nav>
++
++            </div>
++        </section>
++    </div>
++</header>
+\ No newline at end of file
+Index: src/main/java/notice/DetailController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/notice/DetailController.java b/src/main/java/notice/DetailController.java
+new file mode 100644
+--- /dev/null	
++++ b/src/main/java/notice/DetailController.java	
+@@ -0,0 +1,16 @@
++package notice;
++
++import org.springframework.web.servlet.ModelAndView;
++import org.springframework.web.servlet.mvc.Controller;
++
++import javax.servlet.http.HttpServletRequest;
++import javax.servlet.http.HttpServletResponse;
++
++public class DetailController implements Controller
++{
++    @Override
++    public ModelAndView handleRequest(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws Exception
++    {
++        return new ModelAndView("notice.detail");
++    }
++}
+\ No newline at end of file
+Index: src/main/webapp/WEB-INF/view/notice/list.jsp
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/webapp/WEB-INF/view/notice/list.jsp b/src/main/webapp/WEB-INF/view/notice/list.jsp
+new file mode 100644
+--- /dev/null	
++++ b/src/main/webapp/WEB-INF/view/notice/list.jsp	
+@@ -0,0 +1,115 @@
++<%@ page contentType="text/html; charset=UTF-8"
++         language="java"
++         pageEncoding="utf-8" %>
++<main class="main">
++    <h2 class="main title">공지사항</h2>
++
++    <div class="breadcrumb">
++        <h3 class="hidden">경로</h3>
++        <ul>
++            <li>home</li>
++            <li>고객센터</li>
++            <li>공지사항</li>
++        </ul>
++    </div>
++
++    <div class="search-form margin-top first align-right">
++        <h3 class="hidden">공지사항 검색폼</h3>
++        <form class="table-form">
++            <fieldset>
++                <legend class="hidden">공지사항 검색 필드</legend>
++                <label class="hidden">검색분류</label>
++                <select name="f">
++                    <option value="title">제목</option>
++                    <option value="writerId">작성자</option>
++                </select>
++                <label class="hidden">검색어</label>
++                <input type="text" name="q" value=""/>
++                <input class="btn btn-search" type="submit" value="검색"/>
++            </fieldset>
++        </form>
++    </div>
++
++    <div class="notice margin-top">
++        <h3 class="hidden">공지사항 목록</h3>
++        <table class="table">
++            <thead>
++            <tr>
++                <th class="w60">번호</th>
++                <th class="expand">제목</th>
++                <th class="w100">작성자</th>
++                <th class="w100">작성일</th>
++                <th class="w60">조회수</th>
++            </tr>
++            </thead>
++            <tbody>
++            <tr>
++                <td>8</td>
++                <td class="title indent text-align-left"><a href="detail">스프링 8강까지의 예제 코드</a></td>
++                <td>newlec</td>
++                <td>
++                    2019-08-18
++                </td>
++                <td>146</td>
++            </tr>
++
++            <tr>
++                <td>7</td>
++                <td class="title indent text-align-left"><a href="detail.html">스프링 DI 예제 코드</a></td>
++                <td>newlec</td>
++                <td>
++                    2019-08-15
++                </td>
++                <td>131</td>
++            </tr>
++
++            <tr>
++                <td>6</td>
++                <td class="title indent text-align-left"><a href="detail.html">뉴렉쌤 9월 초 국기과정 모집 안내</a></td>
++                <td>newlec</td>
++                <td>
++                    2019-06-11
++                </td>
++                <td>517</td>
++            </tr>
++
++            <tr>
++                <td>5</td>
++                <td class="title indent text-align-left"><a href="detail.html">뉴렉처 강의 수강 방식 안내</a></td>
++                <td>newlec</td>
++                <td>
++                    2019-05-24
++                </td>
++                <td>448</td>
++            </tr>
++
++            <tr>
++                <td>4</td>
++                <td class="title indent text-align-left"><a href="detail.html">자바 구조적인 프로그래밍 강의 예제 파일</a></td>
++                <td>newlec</td>
++                <td>
++                    2019-04-24
++                </td>
++                <td>520</td>
++            </tr>
++            </tbody>
++        </table>
++    </div>
++
++    <div class="indexer margin-top align-right">
++        <h3 class="hidden">현재 페이지</h3>
++        <div><span class="text-orange text-strong">1</span> / 1 pages</div>
++    </div>
++
++    <div class="margin-top align-center pager">
++        <div>
++            <span class="btn btn-prev" onclick="alert('이전 페이지가 없습니다.');">이전</span>
++        </div>
++        <ul class="-list- center">
++            <li><a class="-text- orange bold" href="?p=1&t=&q=">1</a></li>
++        </ul>
++        <div>
++            <span class="btn btn-next" onclick="alert('다음 페이지가 없습니다.');">다음</span>
++        </div>
++    </div>
++</main>
+\ No newline at end of file
+Index: src/main/webapp/WEB-INF/tiles.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/webapp/WEB-INF/tiles.xml b/src/main/webapp/WEB-INF/tiles.xml
+new file mode 100644
+--- /dev/null	
++++ b/src/main/webapp/WEB-INF/tiles.xml	
+@@ -0,0 +1,22 @@
++<?xml version="1.0" encoding="UTF-8" ?>
++<!DOCTYPE tiles-definitions PUBLIC
++        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
++        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
++<tiles-definitions>
++    <definition name="notice.list" template="/WEB-INF/view/customer/inc/layout.jsp">
++        <put-attribute name="title" value="Tiles tutorial homepage"/>
++        <put-attribute name="header" value="/WEB-INF/view/inc/header.jsp"/>
++        <put-attribute name="visual" value="/WEB-INF/view/customer/inc/visual.jsp"/>
++        <put-attribute name="aside" value="/WEB-INF/view/customer/inc/aside.jsp"/>
++        <put-attribute name="body" value="/WEB-INF/view/notice/list.jsp"/>
++        <put-attribute name="footer" value="/WEB-INF/view/inc/footer.jsp"/>
++    </definition>
++    <definition name="notice.detail" template="/WEB-INF/view/customer/inc/layout.jsp">
++        <put-attribute name="title" value="Tiles tutorial homepage"/>
++        <put-attribute name="header" value="/WEB-INF/view/inc/header.jsp"/>
++        <put-attribute name="visual" value="/WEB-INF/view/customer/inc/visual.jsp"/>
++        <put-attribute name="aside" value="/WEB-INF/view/customer/inc/aside.jsp"/>
++        <put-attribute name="body" value="/WEB-INF/view/notice/detail.jsp"/>
++        <put-attribute name="footer" value="/WEB-INF/view/inc/footer.jsp"/>
++    </definition>
++</tiles-definitions>
+\ No newline at end of file
+Index: src/main/java/notice/ListController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/notice/ListController.java b/src/main/java/notice/ListController.java
+new file mode 100644
+--- /dev/null	
++++ b/src/main/java/notice/ListController.java	
+@@ -0,0 +1,16 @@
++package notice;
++
++import org.springframework.web.servlet.ModelAndView;
++import org.springframework.web.servlet.mvc.Controller;
++
++import javax.servlet.http.HttpServletRequest;
++import javax.servlet.http.HttpServletResponse;
++
++public class ListController implements Controller
++{
++    @Override
++    public ModelAndView handleRequest(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse)
++    {
++        return new ModelAndView("notice.list");
++    }
++}
+\ No newline at end of file
+Index: src/main/webapp/WEB-INF/view/notice/detail.jsp
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/webapp/WEB-INF/view/notice/detail.jsp b/src/main/webapp/WEB-INF/view/notice/detail.jsp
+new file mode 100644
+--- /dev/null	
++++ b/src/main/webapp/WEB-INF/view/notice/detail.jsp	
+@@ -0,0 +1,76 @@
++<%@ page contentType="text/html; charset=UTF-8"
++         language="java"
++         pageEncoding="utf-8" %>
++<main>
++    <h2 class="main title">공지사항</h2>
++
++    <div class="breadcrumb">
++        <h3 class="hidden">breadlet</h3>
++        <ul>
++            <li>home</li>
++            <li>고객센터</li>
++            <li>공지사항</li>
++        </ul>
++    </div>
++
++    <div class="margin-top first">
++        <h3 class="hidden">공지사항 내용</h3>
++        <table class="table">
++            <tbody>
++            <tr>
++                <th>제목</th>
++                <td class="text-align-left text-indent text-strong text-orange" colspan="3">스프링 8강까지의 예제 코드</td>
++            </tr>
++            <tr>
++                <th>작성일</th>
++                <td class="text-align-left text-indent" colspan="3">2019-08-18</td>
++            </tr>
++            <tr>
++                <th>작성자</th>
++                <td>newlec</td>
++                <th>조회수</th>
++                <td>148</td>
++            </tr>
++            <tr>
++                <th>첨부파일</th>
++                <td colspan="3"></td>
++            </tr>
++            <tr class="content">
++                <td colspan="4">안녕하세요. 뉴렉처입니다.
++                    <div><br></div>
++                    <div>현재 진행중인 스프링 DI 8강까지의 예제입니다.</div>
++                    <div><br></div>
++                    <div><a href="http://www.newlecture.com/resource/spring2.zip"><b><u><font size="5"
++                                                                                              color="#dd8a00">예제
++                        다운로드하기</font></u></b></a></div>
++                    <div><br></div>
++                    <div><br></div>
++                </td>
++            </tr>
++            </tbody>
++        </table>
++    </div>
++
++    <div class="margin-top text-align-center">
++        <a class="btn btn-list" href="list.html">목록</a>
++    </div>
++
++    <div class="margin-top">
++        <table class="table border-top-default">
++            <tbody>
++
++            <tr>
++                <th>다음글</th>
++                <td colspan="3" class="text-align-left text-indent">다음글이 없습니다.</td>
++            </tr>
++
++            <tr>
++                <th>이전글</th>
++                <td colspan="3" class="text-align-left text-indent"><a class="text-blue text-strong" href="">스프링
++                    DI 예제 코드</a></td>
++            </tr>
++
++            </tbody>
++        </table>
++    </div>
++</main>
+\ No newline at end of file
+Index: src/main/webapp/WEB-INF/view/customer/inc/visual.jsp
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/webapp/WEB-INF/view/customer/inc/visual.jsp b/src/main/webapp/WEB-INF/view/customer/inc/visual.jsp
+new file mode 100644
+--- /dev/null	
++++ b/src/main/webapp/WEB-INF/view/customer/inc/visual.jsp	
+@@ -0,0 +1,5 @@
++<%@ page contentType="text/html;charset=UTF-8"
++         language="java" %>
++<div id="visual">
++    <div class="content-container"></div>
++</div>
+\ No newline at end of file
+Index: src/main/webapp/WEB-INF/view/customer/inc/layout.jsp
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/webapp/WEB-INF/view/customer/inc/layout.jsp b/src/main/webapp/WEB-INF/view/customer/inc/layout.jsp
+new file mode 100644
+--- /dev/null	
++++ b/src/main/webapp/WEB-INF/view/customer/inc/layout.jsp	
+@@ -0,0 +1,36 @@
++<%@ page contentType="text/html;charset=UTF-8"
++         pageEncoding="UTF-8"
++         language="java" %>
++<%@ taglib prefix="tiles"
++           uri="http://tiles.apache.org/tags-tiles" %>
++<!DOCTYPE html>
++<html>
++<head>
++    <meta charset="UTF-8">
++    <title>
++        <tiles:getAsString name="title"/>
++    </title>
++    <link href="/css/customer/layout.css" type="text/css" rel="stylesheet"/>
++    <style>
++        #visual .content-container {
++            height: inherit;
++            display: flex;
++            align-items: center;
++            background: url("../../images/customer/visual.png") no-repeat center;
++        }
++    </style>
++</head>
++<body>
++
++<tiles:insertAttribute name="header"/>
++<tiles:insertAttribute name="visual"/>
++
++<div id="body">
++    <div class="content-container clearfix">
++        <tiles:insertAttribute name="aside"/>
++        <tiles:insertAttribute name="body"/>
++    </div>
++</div>
++<tiles:insertAttribute name="footer"/>
++</body>
++</html>
+\ No newline at end of file
+Index: src/main/webapp/WEB-INF/view/customer/inc/aside.jsp
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/webapp/WEB-INF/view/customer/inc/aside.jsp b/src/main/webapp/WEB-INF/view/customer/inc/aside.jsp
+new file mode 100644
+--- /dev/null	
++++ b/src/main/webapp/WEB-INF/view/customer/inc/aside.jsp	
+@@ -0,0 +1,25 @@
++<%@ page contentType="text/html;charset=UTF-8"
++         language="java" %>
++<aside class="aside">
++    <h1>고객센터</h1>
++
++    <nav class="menu text-menu first margin-top">
++        <h1>고객센터메뉴</h1>
++        <ul>
++            <li><a class="current" href="/customer/notice">공지사항</a></li>
++            <li><a class="" href="/customer/faq">자주하는 질문</a></li>
++            <li><a class="" href="/customer/question">수강문의</a></li>
++            <li><a class="" href="/customer/event">이벤트</a></li>
++        </ul>
++    </nav>
++
++    <nav class="menu">
++        <h1>협력업체</h1>
++        <ul>
++            <li><a target="_blank" href="http://www.notepubs.com"><img src="/images/notepubs.png"
++                                                                       alt="노트펍스"/></a></li>
++            <li><a target="_blank" href="http://www.namoolab.com"><img src="/images/namoolab.png" alt="나무랩연구소"/></a>
++            </li>
++        </ul>
++    </nav>
++</aside>
+\ No newline at end of file
